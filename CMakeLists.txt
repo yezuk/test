@@ -33,11 +33,12 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-        bsp/Inc/led.h
         bsp/buzzer/buzzer.h
         bsp/buzzer/buzzer.c
         bsp/Inc/uart.h
         bsp/Src/uart.c
+        components/Src/command.c
+        components/Inc/command.h
 )
 
 # Add STM32CubeMX generated sources
@@ -54,6 +55,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         bsp/Src/led.c
         bsp/buzzer/buzzer.c
         bsp/Src/uart.c
+        components/Src/command.c
 )
 
 # Add include paths

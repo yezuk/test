@@ -20,6 +20,7 @@
 #include "main.h"
 #include "FreeRTOS.h"
 #include "cmsis_os2.h"
+#include "bdma.h"
 #include "dma.h"
 #include "spi.h"
 #include "tim.h"
@@ -28,7 +29,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "led.h"
+
 #include "buzzer.h"
 
 /* USER CODE END Includes */
@@ -100,15 +101,14 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
+  MX_BDMA_Init();
   MX_USART10_UART_Init();
   MX_TIM12_Init();
   MX_TIM8_Init();
-  MX_TIM3_Init();
   MX_SPI6_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_2);
-  bsp_led_init();
-  bsp_led_set(0,0,255);
+
   //warning_buzzer();
 
   // HAL_Delay(500);
@@ -130,8 +130,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    bsp_led_set(0,0,255);
-    HAL_Delay(500);
+
 
     // HAL_UART_Transmit(&huart10, (uint8_t *)a, 7, 1000);
     /* USER CODE END WHILE */

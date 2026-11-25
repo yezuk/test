@@ -1,12 +1,6 @@
 
 #include "command.h"
-// 指令的最小长度
-#define COMMAND_MIN_LENGTH 4
 
-// 循环缓冲区大小
-#define BUFFER_SIZE 128
-// 循环缓冲区
-uint8_t buffer[BUFFER_SIZE];
 // 循环缓冲区读索引
 uint8_t readIndex = 0;
 // 循环缓冲区写索引

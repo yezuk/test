@@ -39,6 +39,8 @@ add_executable(${CMAKE_PROJECT_NAME}
         bsp/Src/uart.c
         components/Src/command.c
         components/Inc/command.h
+        bsp/Inc/ws2812_h723.h
+        bsp/Src/ws2812_h723.c
 )
 
 # Add STM32CubeMX generated sources
@@ -52,7 +54,7 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-        bsp/Src/led.c
+        bsp/Src/ws2812_h723.c
         bsp/buzzer/buzzer.c
         bsp/Src/uart.c
         components/Src/command.c

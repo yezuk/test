@@ -21,7 +21,6 @@
 #include "FreeRTOS.h"
 #include "cmsis_os2.h"
 #include "bdma.h"
-#include "dma.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -100,7 +99,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_DMA_Init();
   MX_BDMA_Init();
   MX_USART10_UART_Init();
   MX_TIM12_Init();
